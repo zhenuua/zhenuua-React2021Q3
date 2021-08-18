@@ -1,7 +1,5 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -12,9 +10,12 @@ module.exports = merge(common, {
     hot: true,
     port: 3000,
   },
-  // plugins: [new BundleAnalyzerPlugin()],
   module: {
     rules: [
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+        type: 'asset/resource',
+      },
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -26,7 +27,7 @@ module.exports = merge(common, {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { modules: true, sourceMap: true },
+            options: { modules: false, sourceMap: true },
           },
           {
             loader: 'postcss-loader',

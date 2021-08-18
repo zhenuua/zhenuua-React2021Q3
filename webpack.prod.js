@@ -22,7 +22,7 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { modules: true, sourceMap: true },
+            options: { modules: false, sourceMap: true },
           },
           'postcss-loader',
           'sass-loader',

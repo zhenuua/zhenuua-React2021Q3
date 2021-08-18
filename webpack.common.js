@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
@@ -10,15 +11,22 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html'),
     }),
-    new webpack.ProgressPlugin(),
+     new webpack.ProgressPlugin(),
+    //CopyPlugin 
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/asset' },
+      ],
+    }),
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        include: path.resolve(__dirname, 'public'),
-        use: 'html-loader',
-      },
+      // {
+      //   test: /\.html$/,
+      //   include: path.resolve(__dirname, 'public'),
+      //   use: 'html-loader',
+      // },
       {
         test: /\.tsx?$/,
         use: 'babel-loader',
@@ -26,7 +34,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.png/,
+        test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
         type: 'asset/resource',
       },
     ],

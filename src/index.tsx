@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/app';
+import './styles.scss';
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 // import { Router } from "react-router-dom";
@@ -7,4 +9,9 @@ import ReactDOM from 'react-dom';
 
 // const history = createBrowserHistory()
 
-ReactDOM.render(<h1>Привет, мир!</h1>, document.getElementById('root'));
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById('root'),
+);
