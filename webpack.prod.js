@@ -8,7 +8,6 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.tsx?$/,
-        // use: 'ts-loader',
         enforce: 'pre',
         loader: 'ts-loader',
         options: {

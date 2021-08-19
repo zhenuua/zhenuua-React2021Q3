@@ -1,16 +1,25 @@
 import React from 'react';
 import CardGrid from './Cards/CardGrid';
 import SearchBar from './SearchBar/SearchBar';
-import { cardCategories } from '../asset/cardCategories';
+import { cardsHouses } from '../asset/cardsHouses';
 
 interface MyProps {}
 interface MyState {}
 
 export default class App extends React.Component<MyProps, MyState> {
   getItems() {
-    return cardCategories.map((item) => ({
-      title: item.nameCategory,
+    return cardsHouses.map((item) => ({
+      id: item.id,
+      title: item.typeHouse,
       imgSrc: item.image,
+      price: item.price,
+      rooms: item.rooms,
+      country: item.country,
+      city: item.city,
+      author: item.author,
+      addDate: item.addDate,
+      likes: item.likes,
+      views: item.views,
     }));
   }
 
@@ -18,7 +27,7 @@ export default class App extends React.Component<MyProps, MyState> {
     return (
       <main>
         <SearchBar />
-        <CardGrid itemsCategories={this.getItems()} />
+        <CardGrid typeHouse={this.getItems()} />
       </main>
     );
   }
