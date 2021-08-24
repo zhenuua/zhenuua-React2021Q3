@@ -20,6 +20,9 @@ module.exports = {
     'no-console': 'off',
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'react/destructuring-assignment': 'off',
+    'react/no-access-state-in-setstate': 'off',
+    'react/prefer-stateless-function': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',

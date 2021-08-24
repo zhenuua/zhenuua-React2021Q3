@@ -1,33 +1,59 @@
 import React from 'react';
 import CardGrid from './Cards/CardGrid';
 import SearchBar from './SearchBar/SearchBar';
-import { cardsHouses } from '../asset/cardsHouses';
+import Forms from './Forms/forms';
+
+interface Houses {
+  id: string;
+  typeHouse: string;
+  name: string;
+  price: string;
+  rooms: string;
+  buildDate: string;
+  country: string;
+  salesman: boolean;
+}
 
 interface MyProps {}
-interface MyState {}
+interface MyState {
+  cardsHouses: Houses[];
+}
 
 export default class App extends React.Component<MyProps, MyState> {
-  getItems() {
-    return cardsHouses.map((item) => ({
+  state = { cardsHouses: [] };
+
+  componentDidMount() {
+    this.setState({ cardsHouses: [] });
+  }
+
+  getItems(cardsHousesAdd: Houses[]) {
+    return cardsHousesAdd.map((item) => ({
       id: item.id,
-      title: item.typeHouse,
-      imgSrc: item.image,
+      typeHouse: item.typeHouse,
+      name: item.name,
       price: item.price,
       rooms: item.rooms,
+      buildDate: item.buildDate,
       country: item.country,
-      city: item.city,
-      author: item.author,
-      addDate: item.addDate,
-      likes: item.likes,
-      views: item.views,
+      salesman: item.salesman,
     }));
+  }
+
+  changeHouses(newCardsHouses: Houses[]) {
+    this.setState({ cardsHouses: newCardsHouses });
   }
 
   render() {
     return (
       <main>
         <SearchBar />
-        <CardGrid typeHouse={this.getItems()} />
+        <Forms
+          cardsHouses={this.state.cardsHouses}
+          fullCardsHouses={(newCardsHouses) => {
+            this.changeHouses(newCardsHouses);
+          }}
+        />
+        <CardGrid typeHouse={this.getItems(this.state.cardsHouses)} />
       </main>
     );
   }

@@ -2,41 +2,41 @@ import React from 'react';
 
 interface MyState {}
 interface MyProps {
-  id: number;
-  title: string;
-  imgSrc: string;
-  price: number;
-  rooms: number;
+  typeHouse: string;
+  name: string;
+  price: string;
+  rooms: string;
+  buildDate: string;
   country: string;
-  city: string;
-  author: string;
-  addDate: string;
-  likes: number;
-  views: number;
+  salesman: boolean;
 }
 
 export default class Card extends React.Component<MyProps, MyState> {
   render() {
+    const { typeHouse, price, country, rooms, name, buildDate } = this.props;
+
+    const imgSrc = `./img/${typeHouse.toLowerCase().replace(/\s/g, '')}.jpg`;
+
     return (
       <div className="card">
-        <img className="card__image" src={this.props.imgSrc} />
+        <img className="card__image" src={imgSrc} />
         <div className="card__info">
-          <h2 className="card__title">{this.props.title}</h2>
-          <h2 className="card__price">${this.props.price}</h2>
-          <h3 className="card__location">
-            country: {this.props.country}; city: {this.props.city}
-          </h3>
-          <h3 className="card__amount-rooms">rooms: {this.props.rooms}</h3>
-          <h5 className="card__author">{this.props.author}</h5>
-          <h5 className="card__date">Added on {this.props.addDate}</h5>
+          <h2 className="card__title">{typeHouse}</h2>
+          <h2 className="card__price">${price}</h2>
+          <h3 className="card__location">country: {country}</h3>
+          <h3 className="card__amount-rooms">rooms: {rooms}</h3>
+          <h5 className="card__author">
+            {this.props.salesman ? 'individual' : 'entity'}, {name}
+          </h5>
+          <h5 className="card__date">Built in {buildDate}</h5>
           <div className="card__contacts">
             <div className="card__likes">
               <img
                 className="card__contacts__image"
                 src="./icons/like.png"
-                alt="image of like"
+                alt="like"
               />
-              <h4 className="card__likes__amount">{this.props.likes}</h4>
+              <h4 className="card__likes__amount">0</h4>
             </div>
             <img
               className="card__contacts__image"
@@ -52,9 +52,9 @@ export default class Card extends React.Component<MyProps, MyState> {
               <img
                 className="card__contacts__image"
                 src="./icons/views.png"
-                alt="image of views"
+                alt="views"
               />
-              <h4 className="card__views__amount">{this.props.views}</h4>
+              <h4 className="card__views__amount">1</h4>
             </div>
           </div>
         </div>

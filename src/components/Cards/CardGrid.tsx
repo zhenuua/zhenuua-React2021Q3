@@ -4,40 +4,34 @@ import Card from './Card';
 import './cardGrid.scss';
 
 interface Houses {
-  id: number;
-  title: string;
-  imgSrc: string;
-  price: number;
-  rooms: number;
+  id: string;
+  typeHouse: string;
+  name: string;
+  price: string;
+  rooms: string;
+  buildDate: string;
   country: string;
-  city: string;
-  author: string;
-  addDate: string;
-  likes: number;
-  views: number;
+  salesman: boolean;
 }
-interface MyState {}
+
 interface MyProps {
   typeHouse: Houses[];
 }
 
-export default class CardGrid extends React.Component<MyProps, MyState> {
+export default class CardGrid extends React.Component<MyProps> {
   render() {
     return (
       <section className="cards-field">
         {this.props.typeHouse.map((item) => (
           <Card
-            id={item.id}
-            title={item.title}
-            imgSrc={item.imgSrc}
+            key={item.id}
+            typeHouse={item.typeHouse}
+            name={item.name}
             price={item.price}
             rooms={item.rooms}
+            buildDate={item.buildDate}
             country={item.country}
-            city={item.city}
-            author={item.author}
-            addDate={item.addDate}
-            likes={item.likes}
-            views={item.views}
+            salesman={item.salesman}
           />
         ))}
       </section>

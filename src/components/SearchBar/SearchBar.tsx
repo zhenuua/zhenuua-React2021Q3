@@ -6,8 +6,8 @@ export default class CardGrid extends React.Component {
     return (
       <section className="search-bar">
         <form className="search-form">
-          <label>
-            <input className="input-search" type="search" name="name" />
+          <label htmlFor="searchBar">
+            <input className="input-search" type="search" name="searchBar" />
           </label>
           <input className="search-btn" type="submit" value="search" />
         </form>
