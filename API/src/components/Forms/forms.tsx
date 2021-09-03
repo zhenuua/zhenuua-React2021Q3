@@ -287,7 +287,7 @@ export default class Forms extends React.Component<MyProps, MyState> {
             </select>
           </label>
 
-          <label className="switch">
+          <label className="switch" htmlFor="salesman">
             <input
               name="salesman"
               type="checkbox"

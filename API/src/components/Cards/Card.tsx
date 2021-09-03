@@ -19,7 +19,7 @@ export default class Card extends React.Component<MyProps, MyState> {
 
     return (
       <div className="card">
-        <img className="card__image" src={imgSrc} />
+        <img className="card__image" src={imgSrc} alt="type of houme" />
         <div className="card__info">
           <h2 className="card__title">{typeHouse}</h2>
           <h2 className="card__price">${price}</h2>

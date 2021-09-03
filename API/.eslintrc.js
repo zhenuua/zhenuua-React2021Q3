@@ -1,6 +1,13 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['airbnb', 'prettier', 'plugin:react/recommended'],
+  extends: [
+    'airbnb',
+    'prettier',
+    'plugin:react/recommended',    
+    "eslint:recommended",
+    // "plugin:@typescript-eslint/eslint-recommended",
+    // "plugin:@typescript-eslint/recommended",
+  ],
   plugins: ['prettier', '@typescript-eslint'],
   rules: {
     'prettier/prettier': [
@@ -14,15 +21,22 @@ module.exports = {
       },
     ],
     // note you must disable the base rule as it can report incorrect errors
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn"],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
     'no-console': 'off',
+    'no-unused-vars': 'warn',
+    'react/prop-types': 'off',
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/destructuring-assignment': 'off',
     'react/no-access-state-in-setstate': 'off',
     'react/prefer-stateless-function': 'off',
+    "react/state-in-constructor": 'off',
     'import/extensions': [
       'error',
       'ignorePackages',

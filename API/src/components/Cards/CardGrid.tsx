@@ -13,12 +13,12 @@ interface Houses {
   country: string;
   salesman: boolean;
 }
-
+interface MyState {}
 interface MyProps {
   typeHouse: Houses[];
 }
 
-export default class CardGrid extends React.Component<MyProps> {
+export default class CardGrid extends React.Component<MyProps, MyState> {
   render() {
     return (
       <section className="cards-field">
