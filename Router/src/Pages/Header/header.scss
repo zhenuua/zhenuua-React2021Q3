@@ -13,7 +13,7 @@ header {
     font-size: 22px;
     line-height: 26px;
     height: 65px;
-    list-style-type: none; 
+    list-style-type: none;
     &__item {
         display: flex;
         align-items: center;
@@ -27,33 +27,12 @@ header {
         border-radius: 5px;
         text-decoration: none;
         cursor: pointer;
+        &__active{
+            background-color: #e06a46;
+        }
         &:hover{
             background-color: #ff5722;
-            
         }
     }
 }
-// ul{
-//     font-family: Roboto;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 22px;
-//     line-height: 26px;
-//     display: flex;
-//     align-items: center;
-//     text-decoration-line: underline;
-//     color: #ffffff;
-//     padding: 8px 0;
-//     width: 248px;
-//     height: 60px;
-//     font-family: Roboto;
-//     font-size: 22px;
-//     line-height: 26px;
-//     display: flex;
-//     align-items: center;
-//     color: #ffffff;
-//     justify-content: center;
-//     border: 2px solid #ffffff;
-//     border-radius: 5px;
-//     cursor: pointer;
-// }
+
