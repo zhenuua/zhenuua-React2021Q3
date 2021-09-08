@@ -2,6 +2,7 @@ import React from 'react';
 
 interface MyState {}
 interface MyProps {
+  id: string;
   typeHouse: string;
   name: string;
   price: string;
@@ -16,7 +17,6 @@ export default class Card extends React.Component<MyProps, MyState> {
     const { typeHouse, price, country, rooms, name, buildDate } = this.props;
 
     const imgSrc = `./img/${typeHouse.toLowerCase().replace(/\s/g, '')}.jpg`;
-
     return (
       <div className="card">
         <img className="card__image" src={imgSrc} alt="type of houme" />

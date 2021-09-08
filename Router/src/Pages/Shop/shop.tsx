@@ -1,7 +1,7 @@
 import React from 'react';
 import CardGrid from './Cards/CardGrid';
-import { SearchBar } from './SearchBar/SearchBar';
 import Forms from './Forms/forms';
+import { cardsHousesDefault } from '../../asset/constants';
 
 interface Houses {
   id: string;
@@ -18,11 +18,15 @@ interface MyState {
   cardsHouses: Houses[];
 }
 
-export default class App extends React.Component<MyProps, MyState> {
-  state = { cardsHouses: [] };
+export default class Shop extends React.Component<MyProps, MyState> {
+  state = {
+    cardsHouses: [],
+  };
 
   componentDidMount() {
-    this.setState({ cardsHouses: [] });
+    this.setState({
+      cardsHouses: cardsHousesDefault,
+    });
   }
 
   static getItems(cardsHousesAdd: Houses[]) {
@@ -45,14 +49,13 @@ export default class App extends React.Component<MyProps, MyState> {
   render() {
     return (
       <main>
-        <SearchBar />
         <Forms
           cardsHouses={this.state.cardsHouses}
           fullCardsHouses={(newCardsHouses) => {
             this.changeHouses(newCardsHouses);
           }}
         />
-        <CardGrid typeHouse={App.getItems(this.state.cardsHouses)} />
+        <CardGrid typeHouse={Shop.getItems(this.state.cardsHouses)} />
       </main>
     );
   }

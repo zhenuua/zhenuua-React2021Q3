@@ -29,7 +29,6 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error'],
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
     'no-console': 'off',
-    'no-unused-vars': 'warn',
     'react/prop-types': 'off',
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],

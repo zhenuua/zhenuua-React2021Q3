@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, MouseEvent, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Article } from '../../../asset/types';
-
-const MAX_PAGE_SIZE = 100;
+import { MAX_PAGE_SIZE } from '../../../asset/constants';
 
 interface ArticleProps {
   articles: Article[];
@@ -106,6 +106,7 @@ export const Articles: FC<ArticleProps> = ({
               <td>auther</td>
               <td>published at</td>
               <td>Image</td>
+              <td>Details</td>
             </tr>
           </thead>
           <tbody>
@@ -116,6 +117,11 @@ export const Articles: FC<ArticleProps> = ({
                 <td>{publishedAt}</td>
                 <td>
                   <img className="autherphoto" src={urlToImage} alt={title} />
+                </td>
+                <td>
+                  <Link to={`/details/${title.replace('%', '')}`}>
+                    <p>More details</p>
+                  </Link>
                 </td>
               </tr>
             ))}

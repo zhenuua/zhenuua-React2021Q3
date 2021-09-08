@@ -1,9 +1,10 @@
 import React, { ChangeEvent, FC, useState, useEffect } from 'react';
 import { Article, SortTypeOptions, SortTypeLanguage } from '../../asset/types';
 import { Articles } from './Articles/articles';
-import './searchBar.scss';
 
-export const SearchBar: FC = () => {
+import './home.scss';
+
+export const Home: FC = () => {
   const [searchValue, setSearchValue] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [arts, setArts] = useState<Article[]>([]);
@@ -28,7 +29,7 @@ export const SearchBar: FC = () => {
     // ebeae2038d0048b6b1bf52de9be10b07
     // 94670730b44c4e62a57a7dbdcee91995
     // c3ee6a6db53c45f8a987673bf67d658c
-    const API_KEY = '2dc2eddc38044aa78291cd76243ac73f';
+    const API_KEY = 'c3ee6a6db53c45f8a987673bf67d658c';
     const url = 'https://newsapi.org/';
     const linkFetch =
       `${url}` +

@@ -1,4 +1,4 @@
-p{
+label p{
   margin: 2px;
   font-family: Roboto;
   font-weight: normal;
@@ -150,14 +150,11 @@ table {
   color: rgb(216, 88, 41);
 }
 
-
-
-
 //animation of loading
 .loading {
   position: absolute;
   left: 50%;
-  top: 13%;
+  top: 180px;
   transform: translate(-50%, -50%);
   width: 500px;
   &__text{
