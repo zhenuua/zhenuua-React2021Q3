@@ -1,0 +1,16 @@
+.page-about{
+  margin: 0 auto;
+  width: 1200px;
+  &__img{
+    display: flex;
+    margin: 0 auto;
+    height: 250px;
+  }
+  &__text{
+    display: flex;
+    justify-content: center;
+    font-size: 37px;
+    margin: 10px auto;
+    color: #d85829;
+  }
+}
