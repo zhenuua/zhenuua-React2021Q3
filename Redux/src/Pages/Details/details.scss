@@ -1,0 +1,12 @@
+.page-details{
+  margin: 0 auto;
+  width: 1200px;
+  &__item{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  &__img{
+    height: 400px;
+  }
+}

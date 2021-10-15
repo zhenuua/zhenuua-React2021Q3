@@ -1,0 +1,29 @@
+.popup {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    left: 25%;
+    top: 25%;
+}
+.popup .popuptext {
+    display: flex;
+    visibility: hidden;
+    width: 320px;
+    height: 220px;
+    background-color: #2196f3;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    border-radius: 6px;
+    z-index: 1;
+    font-size: 32px;
+}
+.popup .show {
+    visibility: visible;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
